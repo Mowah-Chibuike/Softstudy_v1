@@ -1,0 +1,318 @@
+.hero {
+  position: relative;
+  padding: 3rem 30px;
+  padding-top: 80px;
+  padding-bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  height: 300px;
+}
+
+.dot1 {
+  position: absolute;
+  top: 79px;
+  right: 139px;
+}
+.hero-text {
+  position: relative;
+  width: 85%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.dot2 {
+  position: absolute;
+  bottom: 15px;
+  left: 45px;
+}
+.dot3 {
+  position: absolute;
+  bottom: 40px;
+  left: -2px;
+}
+.dot4 {
+  position: absolute;
+  bottom: 30px;
+  left: 105px;
+}
+.hero h1 {
+  width: 100%;
+  font-size: 1.1rem;
+}
+
+.hero p {
+  display: none;
+}
+.hero .colored-span {
+  color: #0b63b5;
+}
+
+.test {
+  color: white;
+  background-color: #0b63b5;
+  border: 1px solid #0b63b5;
+  border-radius: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+  font-size: 0.85rem;
+  padding: 10px 15px;
+  text-decoration: none;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  transition: 0.5s all;
+}
+.test:hover {
+  background-color: white;
+  border: 1px solid#0b63b5;
+  color: #0b63b5;
+}
+.button {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: auto;
+}
+.explore {
+  color: #0b63b5;
+  background-color: white;
+  border: 1px solid #0b63b5;
+  border-radius: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+  font-size: 0.85rem;
+  padding: 10px 15px;
+  width: 136px;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.5s all;
+}
+.explore:hover {
+  background-color: #0b63b5;
+  color: white;
+}
+.hero-image {
+  background-image: url(assets/Ellipse\ 1.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom center;
+  width: 174px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.image {
+  background-image: url(assets/Lady\ 1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom center;
+  width: 100%;
+  height: 100%;
+}
+#features {
+  background-color: #cee0f0;
+  padding: 1.5rem 2rem;
+}
+.features-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.features {
+  background-color: white;
+  border-radius: 5px;
+  width: 80%;
+  margin: 25px auto;
+  padding: 25px 50px;
+  text-align: center;
+  transition: 0.5s ease-in-out;
+}
+.features:hover {
+  box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.features p {
+  text-align: left;
+}
+.features img,
+h4,
+p {
+  margin-bottom: 10px;
+}
+
+#personality-test {
+  padding: 25px 30px;
+}
+.take-test {
+  background-color: #8bbeef;
+  padding: 35px 30px;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.take-test p {
+  margin-bottom: 30px;
+}
+.take-test a {
+  text-decoration: none;
+  background-color: #0b63b5;
+  color: white;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: 400;
+  border-radius: 5px;
+  border: 1px solid #0b63b5;
+  transition: 0.5s ease-in-out all;
+}
+.take-test a:hover {
+  background-color: white;
+  color: #0b63b5;
+  transform: scaleY(1.05);
+}
+
+@media screen and (min-width: 420px) {
+  .hero h1 {
+    width: 100%;
+    font-size: 1.35rem;
+  }
+
+  .dot1 {
+    position: absolute;
+    top: 79px;
+    right: 149px;
+  }
+
+  .dot2 {
+    position: absolute;
+    bottom: 15px;
+    left: 55px;
+  }
+  .dot3 {
+    position: absolute;
+    bottom: 40px;
+    left: -2px;
+  }
+  .dot4 {
+    position: absolute;
+    bottom: 30px;
+    left: 145px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 15rem;
+    padding-bottom: 0px;
+    height: 65vh;
+  }
+  .dot1 {
+    position: absolute;
+    top: 13%;
+    right: 52%;
+  }
+  .dot2 {
+    position: absolute;
+    bottom: 5%;
+    left: 30%;
+  }
+  .dot3 {
+    position: absolute;
+    bottom: 17%;
+    left: 5%;
+  }
+  .dot4 {
+    position: absolute;
+    bottom: 14%;
+    left: 55%;
+  }
+
+  .hero-text {
+    position: relative;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .hero p {
+    display: block;
+    width: 80%;
+    margin-bottom: 30px;
+  }
+  .hero-image {
+    width: 40%;
+    height: 100%;
+  }
+  .image {
+    background-image: url(assets/LadyDesktop.png);
+  }
+
+  .button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: auto;
+  }
+
+  .test {
+    margin: 0px;
+    margin-right: 20px;
+  }
+
+  #features {
+    padding: 3rem 3rem;
+  }
+
+  #features h2 {
+    margin-bottom: 40px;
+  }
+  .features-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .features {
+    width: 20%;
+    height: 250px;
+    margin: 25px 0;
+    margin-right: 25px;
+    padding: 25px 50px;
+  }
+
+  #personality-test {
+    background-color: #deefff;
+    padding: 5rem 7rem;
+  }
+
+  .take-test {
+    width: 65%;
+    margin: 0 auto;
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .take-test p {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+  }
+}
