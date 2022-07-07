@@ -122,6 +122,11 @@ footer {
   align-items: flex-start;
 }
 
+footer img{
+  width: 70px;
+  height: 30px;
+}
+
 footer p {
   text-align: center;
   width: 100%;
@@ -202,7 +207,12 @@ footer p {
     align-items: center;
     padding: 2.5rem 4.5rem;
   }
-
+  
+  footer img{
+    width: 100px;
+    height: auto
+  }
+  
   footer p {
     width: auto;
     text-align: left;
