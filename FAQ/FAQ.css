@@ -52,8 +52,9 @@ input:focus {
 
 #questions {
   display: flex;
-  flex-direction: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   min-height: 50vh;
   width: 100%;
   padding: 3rem 2rem;
@@ -61,6 +62,7 @@ input:focus {
 
 details {
   width: 100%;
+  margin-bottom: 10px;
 }
 
 details > summary {
@@ -74,9 +76,6 @@ details > summary {
   width: 100%;
   cursor: pointer;
   list-style: none;
-}
-.text {
-  line-height: 35px;
 }
 
 .add-icon {

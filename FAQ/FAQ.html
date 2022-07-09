@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="FAQ.css" />
   </head>
-  <body>
+  <body id="main">
     <div class="head">
       <div class="header">
         <a href="../index.html"
@@ -46,28 +46,17 @@
       <h1>How can we help you today?</h1>
       <p>These are frequently asked questions</p>
       <div class="search">
-        <input type="search" />
-        <button>Search</button>
+        <input id="search" type="search" />
+        <button id="btn">Search</button>
       </div>
     </section>
-    <div id="questions">
-      <details>
-        <summary>
-          <span class="text">What is Softstudy</span
-          ><span class="add-icon"><img src="assets/add.svg" alt="" /></span>
-        </summary>
-        <p>
-          Softstudy is an online learning platform designed to ease student's
-          learning process and also provides convenient and relatable courses to
-          learn
-        </p>
-      </details>
-    </div>
+    <div id="questions"></div>
     <footer>
       <img src="assets/Group.svg" alt="" />
       <p>All Rights Reserved. Softstudy.com</p>
     </footer>
     <script src="../main.js"></script>
+    <script src="FAQ.js"></script>
     <script
       src="https://code.tidio.co/h7mdhk1mjfkqukd6eivglamfwculdfew.js"
       async
