@@ -69,15 +69,15 @@ const inputValidation = () => {
           authText.style.color = "green";
           setTimeout(showMsg, 0);
           setTimeout(hideMsg, 3000);
-//           setTimeout(() => {
-//             if (!takenTest) {
-//               window.location.replace(
-//                 "../Personality-test/Personality-test1.html"
-//               );
-//             } else {
-//               window.location.replace("../index.html");
-//             }
-//           }, 1000);
+          setTimeout(() => {
+            if (!takenTest) {
+              window.location.replace(
+                "../Personality-test/Personality-test1.html"
+              );
+            } else {
+              window.location.replace("../index.html");
+            }
+          }, 1000);
         } else {
           authText.innerText = "Authencation failed";
           authText.style.color = "red";
