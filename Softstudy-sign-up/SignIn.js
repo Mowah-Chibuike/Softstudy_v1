@@ -46,7 +46,7 @@ const inputValidation = () => {
       (Password.value = ""))
     : ((allowSubmit = true), (msg2.innerText = ""), (Password.value = ""));
   if (allowSubmit) {
-    fetch("http://Softstudy.herokuapp.com/api/learners/login", {
+    fetch("https://Softstudy.herokuapp.com/api/learners/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: payload,
