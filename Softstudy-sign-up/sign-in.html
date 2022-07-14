@@ -13,7 +13,10 @@
     />
     <link rel="stylesheet" href="logIn.css" />
   </head>
-  <body>
+  <body id="main">
+    <!-- <div id="authentication">
+     
+    </div> -->
     <div class="sign-up">
       <section class="sign-up-image">
         <div class="ellipse"><img src="assets/Ellipse 5.png" alt="" /></div>
@@ -25,14 +28,19 @@
           Don't have an account? Then,
           <span><a href="index.html">Sign up</a></span>
         </p>
-        <form>
+        <div id="auth-message">
+          <h2 id="auth-text"></h2>
+        </div>
+        <form id="form">
           <div class="input-group">
             <label for="email">Email</label><br />
             <input type="text" name="email" id="email" />
+            <p id="msg1"></p>
           </div>
           <div class="input-group">
             <label for="password">Password</label><br />
             <input type="text" name="password" id="password" />
+            <p id="msg2"></p>
           </div>
           <div class="input-group">
             <input type="checkbox" id="terms" />
@@ -42,7 +50,7 @@
               <span><a href="">Privacy policy</a></span></label
             ><br />
           </div>
-          <input class="button" type="button" value="Sign In" />
+          <input id="submit" class="button" type="button" value="Sign In" />
         </form>
         <div class="third-party">
           <div id="or">
@@ -61,5 +69,6 @@
         </div>
       </section>
     </div>
+    <script type="module" src="SignIn.js"></script>
   </body>
 </html>

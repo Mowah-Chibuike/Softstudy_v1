@@ -13,7 +13,7 @@
     />
     <link rel="stylesheet" href="logIn.css" />
   </head>
-  <body>
+  <body id="body">
     <div class="sign-up">
       <section class="sign-up-image">
         <div class="ellipse"><img src="assets/Ellipse 5.png" alt="" /></div>
@@ -25,18 +25,34 @@
           Already have an account? Then,
           <span><a href="sign-in.html">Sign in</a></span>
         </p>
-        <form>
+        <div id="auth-message">
+          <h2 id="auth-text"></h2>
+        </div>
+        <form id="form">
           <div class="input-group">
-            <label for="name">Full Name</label><br />
-            <input type="text" name="name" id="name" />
+            <label for="firstname">First Name</label><br />
+            <input type="text" name="firstName" id="firstname" /><br />
+            <p id="msg1"></p>
+          </div>
+          <div class="input-group">
+            <label for="lastname">Last Name</label><br />
+            <input type="text" name="lastName" id="lastname" /><br />
+            <p id="msg2"></p>
           </div>
           <div class="input-group">
             <label for="email">Email</label><br />
-            <input type="text" name="email" id="email" />
+            <input type="text" name="email" id="email" /><br />
+            <p id="msg3"></p>
+          </div>
+          <div class="input-group">
+            <label for="birthday">Birthday</label><br />
+            <input type="date" name="dateOfBirth" id="birthday" /><br />
+            <p id="msg4"></p>
           </div>
           <div class="input-group">
             <label for="password">Password</label><br />
-            <input type="text" name="password" id="password" />
+            <input type="text" name="password" id="password" /><br />
+            <p id="msg5"></p>
           </div>
           <div class="input-group">
             <input type="checkbox" id="terms" />
@@ -46,7 +62,12 @@
               <span><a href="">Privacy policy</a></span></label
             ><br />
           </div>
-          <input class="button" type="button" value="Create account" />
+          <input
+            class="button"
+            id="submit"
+            type="submit"
+            value="Create account"
+          />
         </form>
         <div class="third-party">
           <div id="or">
@@ -65,5 +86,6 @@
         </div>
       </section>
     </div>
+    <script src="signUp.js"></script>
   </body>
 </html>
