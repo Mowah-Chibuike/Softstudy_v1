@@ -83,6 +83,7 @@ const inputValidation = () => {
           sessionStorage.setItem("firstName", learner.firstName);
           sessionStorage.setItem("lastName", learner.lastName);
           sessionStorage.setItem("id", learner.id);
+          sessionStorage.setItem("personalityTest", learner.personalityTest);
           sessionStorage.setItem("token", token);
           authText.innerText = "Registration Successful";
           authText.style.color = "green";
