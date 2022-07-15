@@ -97,11 +97,12 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: bottom center;
-  width: 174px;
+  width: 250px;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  margin-left: 10px;
 }
 .image {
   background-image: url(assets/Lady\ 1.png);
@@ -114,7 +115,7 @@
 #auth-message,
 #auth-message2 {
   position: absolute;
-  top: 25%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%);
   z-index: 1000;
@@ -130,6 +131,7 @@
   text-align: center;
   visibility: hidden;
   color: red;
+  font-size: 0.75rem;
 }
 #features {
   background-color: #cee0f0;
@@ -285,7 +287,7 @@ p {
   .image {
     background-image: url(assets/LadyDesktop.png);
   }
-#auth-message,
+  #auth-message,
   #auth-message2 {
     width: 20%;
   }

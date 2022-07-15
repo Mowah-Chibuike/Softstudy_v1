@@ -12,6 +12,8 @@ const msg2 = document.getElementById("msg2");
 const msg3 = document.getElementById("msg3");
 const msg4 = document.getElementById("msg4");
 const msg5 = document.getElementById("msg5");
+const authMsg = document.getElementById("auth-message");
+const authText = document.getElementById("auth-text");
 
 const disable = () => {
   if (!Terms.checked) {
@@ -68,15 +70,13 @@ const inputValidation = () => {
 
         if (status === "success") {
           const { learner } = data;
-          localStorage.setItem("Softstudy", true);
           sessionStorage.setItem("loggedIn", true);
           sessionStorage.setItem("dateOfBirth", learner.dateOfBirth);
           sessionStorage.setItem("email", learner.email);
           sessionStorage.setItem("firstName", learner.firstName);
           sessionStorage.setItem("lastName", learner.lastName);
-          sessionStorage.setItem("takenTest", false);
-          //   sessionStorage.setItem("id", learner.id);
-          //   sessionStorage.setItem("token", token);
+          sessionStorage.setItem("id", learner.id);
+          sessionStorage.setItem("token", token);
           authText.innerText = "Registration Successful";
           authText.style.color = "green";
           setTimeout(showMsg, 0);

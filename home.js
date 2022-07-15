@@ -5,7 +5,8 @@ const authMsg2 = document.getElementById("auth-message2");
 const authText2 = document.getElementById("auth-text2");
 const Test2 = document.getElementById("test2");
 
-const takenTest = false;
+const personalityTest = sessionStorage.getItem("personalityTest");
+const Token = sessionStorage.getItem("token");
 
 const showMsg = () => {
   authMsg.style.visibility = "visible";
@@ -28,12 +29,25 @@ const userTest = () => {
     setTimeout(() => {
       window.location.replace("Softstudy-sign-up/sign-in.html");
     }, 1000);
-  } else if (takenTest) {
-    authText.innerText = "You have already taken the test";
-    setTimeout(showMsg, 0);
-    setTimeout(hideMsg, 3000);
   } else {
-    window.location.replace("Personality-test/Personality-test1.html");
+    fetch("https://Softstudy.herokuapp.com/api/learners/me", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + Token,
+      },
+    })
+      .then((response) => response.json())
+      .then((user) => {
+        sessionStorage.setItem("personalityTest", user.personalityTest);
+        if (personalityTest !== "undefined") {
+          authText.innerText = "You have already taken the test";
+          setTimeout(showMsg, 0);
+          setTimeout(hideMsg, 3000);
+        } else {
+          window.location.replace("Personality-test/Personality-test1.html");
+        }
+      });
   }
 };
 
@@ -42,15 +56,30 @@ const userTest2 = () => {
     authText2.innerText = "Please Sign In";
     setTimeout(showMsg2, 0);
     setTimeout(hideMsg2, 3000);
-    // setTimeout(() => )
-  } else if (takenTest) {
-    authText2.innerText = "You have already taken the test";
-    setTimeout(showMsg2, 0);
-    setTimeout(hideMsg2, 3000);
+    setTimeout(() => {
+      window.location.replace("Softstudy-sign-up/sign-in.html");
+    }, 1000);
   } else {
-    window.location.replace("Personality-test/Personality-test1.html");
+    fetch("https://Softstudy.herokuapp.com/api/learners/me", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + Token,
+      },
+    })
+      .then((response) => response.json())
+      .then((user) => {
+        const { personalityTest } = user;
+        if (personalityTest !== null) {
+          authText2.innerText = "You have already taken the test";
+          setTimeout(showMsg2, 0);
+          setTimeout(hideMsg2, 3000);
+        } else {
+          window.location.replace("Personality-test/Personality-test1.html");
+        }
+      });
   }
 };
-
+(() => console.log(Token))();
 Test.addEventListener("click", userTest);
 Test2.addEventListener("click", userTest2);

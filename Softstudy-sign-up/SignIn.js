@@ -9,7 +9,6 @@ const msg2 = document.getElementById("msg2");
 const authMsg = document.getElementById("auth-message");
 const authText = document.getElementById("auth-text");
 
-const takenTest = false;
 const showMsg = () => {
   authMsg.style.visibility = "visible";
 };
@@ -53,24 +52,25 @@ const inputValidation = () => {
     })
       .then((response) => response.json())
       .then((user) => {
-        const { status, data, token } = user;
+        const { status, data } = user;
 
         if (status === "success") {
-          const { learner } = data;
+          const { learner, token } = data;
           sessionStorage.setItem("loggedIn", true);
           sessionStorage.setItem("dateOfBirth", learner.dateOfBirth);
           sessionStorage.setItem("email", learner.email);
           sessionStorage.setItem("firstName", learner.firstName);
           sessionStorage.setItem("lastName", learner.lastName);
-          sessionStorage.setItem("takenTest", false);
-          //   sessionStorage.setItem("id", learner.id);
-          //   sessionStorage.setItem("token", token);
+          sessionStorage.setItem("personalityTest", learner.personalityTest);
+          sessionStorage.setItem("id", learner.id);
+          sessionStorage.setItem("token", token);
           authText.innerText = "Authencation successful";
           authText.style.color = "green";
           setTimeout(showMsg, 0);
           setTimeout(hideMsg, 3000);
+          const personalityTest = sessionStorage.getItem("personalityTest");
           setTimeout(() => {
-            if (!takenTest) {
+            if (personalityTest === "undefined") {
               window.location.replace(
                 "../Personality-test/Personality-test1.html"
               );

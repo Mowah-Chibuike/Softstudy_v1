@@ -65,7 +65,8 @@ body {
   margin-top: 30px;
 }
 
-#test {
+#test,
+#home {
   color: white;
   background-color: #0b63b5;
   border: 1px solid #0b63b5;
@@ -78,7 +79,8 @@ body {
   margin-left: 20px;
   transition: 0.5s all;
 }
-#test:hover {
+#test:hover,
+#home:hover {
   background-color: white;
   border: 1px solid#0b63b5;
   color: #0b63b5;

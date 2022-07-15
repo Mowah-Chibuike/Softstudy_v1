@@ -1,7 +1,6 @@
 const userName = document.getElementById("username");
 const Main = document.getElementById("main");
-const cancel = document.getElementById("cancel");
-const takeTest = document.getElementById("test");
+const Home = document.getElementById("home");
 
 const firstName =
   sessionStorage.getItem("firstName").charAt(0).toUpperCase() +
@@ -12,14 +11,8 @@ const displayName = () => {
   LoggedIn ? (userName.innerText = firstName) : (userName.innerText = "there");
 };
 
-const startTest = () => {
-  window.location.replace("./Personality-test2.html");
-};
-
 Main.addEventListener("load", displayName());
 
-cancel.addEventListener("click", () => {
+Home.addEventListener("click", () => {
   window.location.replace("../index.html");
 });
-
-takeTest.addEventListener("click", startTest);

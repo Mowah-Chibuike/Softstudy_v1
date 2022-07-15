@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personality Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="test.css" />
+  </head>
+  <body id="main">
+    <div class="head">
+      <div class="header">
+        <a href="../index.html"
+          ><img class="logo" src="../assets/Group.svg" alt="SOFTSTUDY"
+        /></a>
+        <div class="hamburger"></div>
+        <div id="navigation">
+          <ul class="header-el">
+            <li>
+              <div><a href="">About Us</a></div>
+            </li>
+            <li>
+              <div><a href="">Contact Us</a></div>
+            </li>
+            <li>
+              <div><a href="">Courses</a></div>
+            </li>
+            <li>
+              <div><a href="../FAQ/FAQ.html">FAQs</a></div>
+            </li>
+            <li>
+              <div id="sign-up">
+                <a href="../Softstudy-sign-up/sign-up.html">Sign Up</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <section class="main">
+      <div class="question">
+        <h1>Personality Test</h1>
+        <div class="progress-bar">
+          <span id="speed"></span>
+        </div>
+        <div id="auth-message">
+          <h2 id="auth-text"></h2>
+        </div>
+        <form name="form" id="form">
+          <div class="main-set">
+            <ul id="set1" class="set">
+              <li class="questions-container">
+                <h3>
+                  <span class="number">1.</span
+                  ><span>What's your best form of learning</span>
+                </h3>
+                <ul class="options">
+                  <li>
+                    <input
+                      type="radio"
+                      name="bestFormOfLearning"
+                      id="question1a"
+                      value="visual"
+                    /><label for="question1a">Visual</label>
+                  </li>
+                  <li>
+                    <input
+                      type="radio"
+                      name="bestFormOfLearning"
+                      id="question1b"
+                      value="auditory"
+                    />
+                    <label for="question1b">Auditory</label>
+                  </li>
+                  <li>
+                    <input
+                      type="radio"
+                      name="bestFormOfLearning"
+                      id="question1c"
+                      value="reading and writing"
+                    />
+                    <label for="question1c">Reading and Writing</label>
+                  </li>
+                  <li>
+                    <input
+                      type="radio"
+                      name="bestFormOfLearning"
+                      id="question1d"
+                      value="all of the above"
+                    />
+                    <label for="question1d">All of the Above</label>
+                  </li>
+                </ul>
+                <!-- //-->
+              </li>
+              <li class="questions-container">
+                <h3>
+                  <span class="number">2.</span
+                  ><span>When is your best time for reading?</span>
+                </h3>
+                <ul class="options">
+                  <li>
+                    <input
+                      type="radio"
+                      name="bestReadingTime"
+                      id="question2a"
+                      value="During the day"
+                    /><label for="question2a">During the day</label>
+                  </li>
+                  <li>
+                    <input
+                      type="radio"
+                      name="bestReadingTime"
+                      id="question2b"
+                      value="at night"
+                    />
+                    <label for="question2b">At night</label>
+                  </li>
+                </ul>
+                <!-- //-->
+              </li>
+              <li class="questions-container">
+                <h3>
+                  <span class="number">3.</span
+                  ><span>Do you like to use organization tools?</span>
+                </h3>
+                <ul class="options">
+                  <li>
+                    <input
+                      type="radio"
+                      name="likeOrganizationTools"
+                      id="question3a"
+                      value="Yes"
+                    /><label for="question3a">Yes</label>
+                  </li>
+                  <li>
+                    <input
+                      type="radio"
+                      name="likeOrganizationTools"
+                      id="question3b"
+                      value="No"
+                    />
+                    <label for="question3b">No</label>
+                  </li>
+                </ul>
+                <!-- //-->
+              </li>
+              <li class="questions-container">
+                <h3>
+                  <span class="number">4.</span
+                  ><span
+                    >Can you manage pressure? (that comes with
+                    examinations)</span
+                  >
+                </h3>
+                <ul class="options">
+                  <li>
+                    <input
+                      type="radio"
+                      name="canManageExamsPressure"
+                      id="question4a"
+                      value="Yes"
+                    /><label for="question4a">Yes</label>
+                  </li>
+                  <li>
+                    <input
+                      type="radio"
+                      name="canManageExamsPressure"
+                      id="question4b"
+                      value="No"
+                    />
+                    <label for="question4b">No</label>
+                  </li>
+                </ul>
+                <!-- //-->
+              </li>
+              <li class="questions-container">
+                <h3>
+                  <span class="number">5.</span
+                  ><span>Do you like meeting people with like minds?</span>
+                </h3>
+                <ul class="options">
+                  <li>
+                    <input
+                      type="radio"
+                      name="meetLikeMindedPersons"
+                      id="question5a"
+                      value="Yes"
+                    /><label for="question5a">Yes</label>
+                  </li>
+                  <li>
+                    <input
+                      type="radio"
+                      name="meetLikeMindedPersons"
+                      id="question5b"
+                      value="No"
+                    />
+                    <label for="question5b">No</label>
+                  </li>
+                </ul>
+                <!-- //-->
+              </li>
+              <div class="buttons">
+                <button class="solid" id="next">Next</button>
+              </div>
+
+              <!-- //-->
+            </ul>
+            <ul id="set2" class="set">
+              <li class="questions-container">
+                <h3>
+                  <span class="number">6.</span
+                  ><span>Would you like to have Study groups?</span>
+                </h3>
+                <ul class="options">
+                  <li>
+                    <input
+                      type="radio"
+                      name="likeStudyGroups"
+                      id="question6a"
+                      value="Yes"
+                    /><label for="question6a">Yes</label>
+                  </li>
+                  <li>
+                    <input
+                      type="radio"
+                      name="likeStudyGroups"
+                      id="question6b"
+                      value="No"
+                    />
+                    <label for="question6b">No</label>
+                  </li>
+                </ul>
+                <!-- //-->
+              </li>
+              <li class="questions-container">
+                <h3>
+                  <span class="number">7.</span
+                  ><span>Which do you prefer?</span>
+                </h3>
+                <ul class="options">
+                  <li>
+                    <input
+                      type="radio"
+                      name="preparationPreference"
+                      id="question7a"
+                      value="Yes"
+                    /><label for="question7a">Planning for exams ahead</label>
+                  </li>
+                  <li>
+                    <input
+                      type="radio"
+                      name="preparationPreference"
+                      id="question7b"
+                      value="No"
+                    />
+                    <label for="question5b">Last minute preparation</label>
+                  </li>
+                </ul>
+                <!-- //-->
+              </li>
+              <li class="questions-container">
+                <h3>
+                  <span class="number">8.</span
+                  ><span
+                    >Do you prefer to do what you need to do before
+                    relaxing?</span
+                  >
+                </h3>
+                <ul class="options">
+                  <li>
+                    <input
+                      type="radio"
+                      name="completeTaskBeforeRelaxing"
+                      id="question8a"
+                      value="Yes"
+                    /><label for="question8a">Yes</label>
+                  </li>
+                  <li>
+                    <input
+                      type="radio"
+                      name="completeTaskBeforeRelaxing"
+                      id="question8b"
+                      value="No"
+                    />
+                    <label for="question8b">No</label>
+                  </li>
+                </ul>
+                <!-- //-->
+              </li>
+              <li class="questions-container">
+                <h3>
+                  <span class="number">9.</span
+                  ><span>Do you struggle with deadlines?</span>
+                </h3>
+                <ul class="options">
+                  <li>
+                    <input
+                      type="radio"
+                      name="struggleWithDeadline"
+                      id="question9a"
+                      value="Yes"
+                    /><label for="question9a">Yes</label>
+                  </li>
+                  <li>
+                    <input
+                      type="radio"
+                      name="struggleWithDeadline"
+                      id="question9b"
+                      value="No"
+                    />
+                    <label for="question9b">No</label>
+                  </li>
+                </ul>
+                <!-- //-->
+              </li>
+              <li class="questions-container">
+                <h3>
+                  <span class="number">10.</span
+                  ><span>Is studying your thing?</span>
+                </h3>
+                <ul class="options">
+                  <li>
+                    <input
+                      type="radio"
+                      name="likeStudying"
+                      id="question10a"
+                      value="Yes"
+                    /><label for="question10a">Yes</label>
+                  </li>
+                  <li>
+                    <input
+                      type="radio"
+                      name="likeStudying"
+                      id="question10b"
+                      value="No"
+                    />
+                    <label for="question10b">No</label>
+                  </li>
+                </ul>
+                <!-- //-->
+              </li>
+              <div class="buttons">
+                <button id="previous" class="hollow">Previous</button
+                ><button class="solid" type="submit" id="submit">Submit</button>
+              </div>
+              <!-- //-->
+            </ul>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+  <script src="../main.js"></script>
+  <script src="test.js"></script>
+</html>
