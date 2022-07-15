@@ -15,6 +15,13 @@ const msg5 = document.getElementById("msg5");
 const authMsg = document.getElementById("auth-message");
 const authText = document.getElementById("auth-text");
 
+const showMsg = () => {
+  authMsg.style.visibility = "visible";
+};
+const hideMsg = () => {
+  authMsg.style.visibility = "hidden";
+};
+
 const disable = () => {
   if (!Terms.checked) {
     Submit.disabled = true;
@@ -66,10 +73,10 @@ const inputValidation = () => {
     })
       .then((response) => response.json())
       .then((user) => {
-        const { status, data, token } = user;
+        const { status, data } = user;
 
         if (status === "success") {
-          const { learner } = data;
+          const { learner, token } = data;
           sessionStorage.setItem("loggedIn", true);
           sessionStorage.setItem("dateOfBirth", learner.dateOfBirth);
           sessionStorage.setItem("email", learner.email);
@@ -90,6 +97,12 @@ const inputValidation = () => {
           setTimeout(showMsg, 1000);
           setTimeout(hideMsg, 3000);
         }
+      })
+      .catch(() => {
+        authText.innerText = "Registration failed";
+        authText.style.color = "red";
+        setTimeout(showMsg, 1000);
+        setTimeout(hideMsg, 3000);
       });
   }
 };
