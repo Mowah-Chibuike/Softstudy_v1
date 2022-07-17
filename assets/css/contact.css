@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.firstSection{
+    background-color: #85B1DA;
+    padding: 110px;
+    color: #FFFFFF;
+    font-family: 'Montserrat' sans-serif;
+    text-align: center;
+}
+
+.firstSection .main h1{
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 61px;
+    margin-bottom: 20px;
+}
+
+.firstSection .main p{
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 39px;
+}
+
+.secondSection{
+    background-color: #F5F5F5;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.secondSection .form .message{
+    height: 288px;
+    width: 600px;
+    margin-bottom: 20px;
+}
+
+.secondSection .form .name, .secondSection .form .email{
+    height: 84px;
+    width: 290px;
+    margin-bottom: 20px;
+}
+
+.secondSection .form .email{
+    margin-left: 20px;
+}
+
+.secondSection .form .subject{
+    height: 84px;
+    width: 600px;
+    margin-bottom: 46px;
+}
+
+.message::placeholder, .subject::placeholder{
+    font-family: 'Montserrat' sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #686868;
+    padding-left: 28px;
+}
+
+.secondSection .container{
+    margin: 0px;
+    padding: 0px;
+}
+
+.secondSection .sendButton{
+    float: left;
+    margin-left: 84px;
+}
+
+.secondSection button{
+    width: 232px;
+    height: 84px;
+    background-color: #0B63B5;
+    color: #FFFFFF;
+    font-family: 'Montserrat' sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 39px;
+    border: none;
+}
+
+.secondSection .socialMedia{
+    height: 211px;
+    width: 500px;
+    margin-left: 20px;
+}
+
+.container input, .container textarea{
+    background-color: rgba(217, 217, 217, 0.26);
+    border: 2px solid #85B1DA;
+}
+
+.container .socialMedia{
+    background-color: #0B63B5 !important;
+    color: #FFFFFF;
+    text-align: left !important;
+    padding-top: 54px;
+    padding-bottom: 54px;
+    padding-left: 38px;
+}
+
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    list-style-type: none;
+}
