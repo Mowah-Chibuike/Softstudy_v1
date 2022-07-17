@@ -5,7 +5,6 @@ const authMsg2 = document.getElementById("auth-message2");
 const authText2 = document.getElementById("auth-text2");
 const Test2 = document.getElementById("test2");
 
-const personalityTest = sessionStorage.getItem("personalityTest");
 const Token = sessionStorage.getItem("token");
 
 const showMsg = () => {
@@ -39,7 +38,7 @@ const userTest = () => {
     })
       .then((response) => response.json())
       .then((user) => {
-        sessionStorage.setItem("personalityTest", user.personalityTest);
+        const personalityTest = sessionStorage.getItem("personalityTest");
         if (personalityTest !== "undefined") {
           authText.innerText = "You have already taken the test";
           setTimeout(showMsg, 0);
@@ -69,13 +68,14 @@ const userTest2 = () => {
     })
       .then((response) => response.json())
       .then((user) => {
-        const { personalityTest } = user;
-        if (personalityTest !== null) {
+        // const { personalityTest } = user;
+        const personalityTest = sessionStorage.getItem("personalityTest");
+        if (personalityTest === "undefined" || personalityTest !== "null") {
+          window.location.replace("Personality-test/Personality-test1.html");
+        } else {
           authText2.innerText = "You have already taken the test";
           setTimeout(showMsg2, 0);
           setTimeout(hideMsg2, 3000);
-        } else {
-          window.location.replace("Personality-test/Personality-test1.html");
         }
       });
   }

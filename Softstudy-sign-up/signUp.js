@@ -14,6 +14,15 @@ const msg4 = document.getElementById("msg4");
 const msg5 = document.getElementById("msg5");
 const authMsg = document.getElementById("auth-message");
 const authText = document.getElementById("auth-text");
+const loader = document.getElementById("loader-container");
+
+const show = (Msg) => {
+  Msg.style.visibility = "visible";
+};
+
+const hide = (Msg) => {
+  Msg.style.visibility = "hidden";
+};
 
 const showMsg = () => {
   authMsg.style.visibility = "visible";
@@ -22,6 +31,13 @@ const hideMsg = () => {
   authMsg.style.visibility = "hidden";
 };
 
+const showError = (message) => {
+  hide(loader);
+  authText.innerText = message;
+  authText.style.color = "red";
+  setTimeout(showMsg, 1000);
+  setTimeout(hideMsg, 3000);
+};
 const disable = () => {
   if (!Terms.checked) {
     Submit.disabled = true;
@@ -58,7 +74,7 @@ const inputValidation = () => {
       (Birthday.value = ""))
     : ((allowSubmit = true), (msg4.innerText = ""), (Birthday.value = ""));
 
-  Password.length < 7
+  Password.value.length < 7
     ? ((msg5.innerText =
         "Password must contain up to 8 characters containing alphabets(a-z), numbers(0-9) and atleast a symbol(/..)"),
       (allowSubmit = false),
@@ -66,6 +82,7 @@ const inputValidation = () => {
     : ((allowSubmit = true), (msg5.innerText = ""), (Password.value = ""));
   console.log(allowSubmit);
   if (allowSubmit) {
+    show(loader);
     fetch("https://Softstudy.herokuapp.com/api/learners/sign-up", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -87,23 +104,23 @@ const inputValidation = () => {
           sessionStorage.setItem("token", token);
           authText.innerText = "Registration Successful";
           authText.style.color = "green";
+          hide(loader);
           setTimeout(showMsg, 0);
           setTimeout(hideMsg, 3000);
           setTimeout(() => {
             window.location.replace("../index.html");
           }, 1000);
+        } else if (
+          status === "error" &&
+          user.message === "Email already exist!"
+        ) {
+          showError("Email address already exists");
         } else {
-          authText.innerText = "Registration failed";
-          authText.style.color = "red";
-          setTimeout(showMsg, 1000);
-          setTimeout(hideMsg, 3000);
+          showError("Registration failed");
         }
       })
       .catch(() => {
-        authText.innerText = "Registration failed";
-        authText.style.color = "red";
-        setTimeout(showMsg, 1000);
-        setTimeout(hideMsg, 3000);
+        showError("Something went wrong");
       });
   }
 };

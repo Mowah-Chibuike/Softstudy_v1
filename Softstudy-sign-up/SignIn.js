@@ -2,12 +2,19 @@ const Main = document.getElementById("main");
 const Form = document.getElementById("form");
 const Email = document.getElementById("email");
 const Password = document.getElementById("password");
-const Terms = document.getElementById("terms");
 const Submit = document.getElementById("submit");
 const msg1 = document.getElementById("msg1");
 const msg2 = document.getElementById("msg2");
 const authMsg = document.getElementById("auth-message");
 const authText = document.getElementById("auth-text");
+const loader = document.getElementById("loader-container");
+
+const show = (Msg) => {
+  Msg.style.visibility = "visible";
+};
+const hide = (Msg) => {
+  Msg.style.visibility = "hidden";
+};
 
 const showMsg = () => {
   authMsg.style.visibility = "visible";
@@ -15,14 +22,14 @@ const showMsg = () => {
 const hideMsg = () => {
   authMsg.style.visibility = "hidden";
 };
-const disable = () => {
-  if (!Terms.checked) {
-    Submit.disabled = true;
-  }
+
+const showError = (message) => {
+  hide(loader);
+  authText.innerText = message;
+  authText.style.color = "red";
+  setTimeout(showMsg, 1000);
+  setTimeout(hideMsg, 3000);
 };
-try {
-  Main.addEventListener("load", disable());
-} catch (error) {}
 try {
   Form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -45,6 +52,7 @@ const inputValidation = () => {
       (Password.value = ""))
     : ((allowSubmit = true), (msg2.innerText = ""), (Password.value = ""));
   if (allowSubmit) {
+    show(loader);
     fetch("https://Softstudy.herokuapp.com/api/learners/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -66,7 +74,8 @@ const inputValidation = () => {
           sessionStorage.setItem("token", token);
           authText.innerText = "Authencation successful";
           authText.style.color = "green";
-          setTimeout(showMsg, 0);
+          hide(loader);
+          setTimeout(showMsg, 1000);
           setTimeout(hideMsg, 3000);
           const personalityTest = sessionStorage.getItem("personalityTest");
           setTimeout(() => {
@@ -78,20 +87,22 @@ const inputValidation = () => {
               window.location.replace("../index.html");
             }
           }, 1000);
+        } else if (
+          status === "error" &&
+          user.message === "Invalid email or password"
+        ) {
+          showError("Invalid Email or Password");
         } else {
-          authText.innerText = "Authencation failed";
-          authText.style.color = "red";
-          setTimeout(showMsg, 1000);
-          setTimeout(hideMsg, 3000);
+          showError("Authentication failed");
         }
+      })
+      .catch((error) => {
+        console.log(error);
+        showError("Something went wrong");
       });
   }
 };
-try {
-  Terms.addEventListener("click", () => {
-    Terms.checked ? (Submit.disabled = false) : (Submit.disabled = true);
-  });
-} catch (error) {}
+
 try {
   Submit.addEventListener("click", inputValidation);
 } catch (error) {}
