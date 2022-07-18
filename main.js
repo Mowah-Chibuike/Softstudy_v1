@@ -37,7 +37,7 @@ const userState = () => {
     signUp.innerText = "";
     signUp.append(createLink("Sign Up", "Softstudy-sign-up/sign-up.html"));
   } else {
-    signIn.style.display = "none";
+    signIn.style.visibility = "hidden";
     signUp.innerText = "";
     signUp.append(createPTag("Sign Out", "sign-out"));
     signUp.addEventListener("click", () => {
