@@ -236,7 +236,7 @@ next.addEventListener("click", () => {
 });
 previous.addEventListener("click", () => {
   set1.style.display = "block";
-  window.location.assign("set1");
+  window.location.assign("#set1");
 });
 Submit.addEventListener("click", () => {
   let obj = {};
