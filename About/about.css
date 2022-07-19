@@ -1,0 +1,172 @@
+.hero,
+.vision {
+  position: relative;
+  padding: 3rem 30px;
+  padding-top: 80px;
+  padding-bottom: 4rem;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  background-color: #85b1da;
+  color: white;
+}
+
+h2,
+p {
+  margin-bottom: 10px;
+}
+
+.mission,
+.team {
+  position: relative;
+  padding: 3rem 30px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+}
+
+.vision {
+  padding-block: 3rem;
+}
+
+.img {
+  background-color: white;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 250px;
+  margin-bottom: 40px;
+  /* border-radius: 25px; */
+}
+
+.img1 {
+  background-image: url(assets/Mask\ group.png);
+  box-shadow: inset 0 0 4px 0.5px #121212;
+  border-radius: 10px;
+}
+
+.img2 {
+  background-image: url(assets/Mask\ group2.png);
+}
+
+.img3 {
+  background-image: url(assets/Mask\ group3.png);
+  box-shadow: inset 0 0 4px 0.5px #121212;
+  border-radius: 10px;
+}
+
+.img4 {
+  width: 75%;
+  position: relative;
+  height: 250px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.container {
+  width: 50%;
+  height: 100%;
+  padding-inline: 5px;
+}
+
+.con1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.con2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.box {
+  width: 100%;
+  height: 47%;
+  background-color: #d9d9d9;
+  margin-bottom: 5px;
+}
+
+@media screen and (min-width: 1024px) {
+  .hero,
+  .vision {
+    position: relative;
+    height: 52vh;
+    padding: 4rem;
+    padding-inline: 8rem;
+  }
+
+  .hero-text,
+  .mission-text,
+  .vision-text {
+    text-align: left;
+    width: 50%;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.15rem;
+  }
+  .img1,
+  .img3 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: transparent;
+    background-size: contain;
+    background-position: center right;
+    box-shadow: none;
+  }
+
+  .mission {
+    position: relative;
+    height: 55vh;
+    padding: 7rem;
+    padding-inline: 8rem;
+  }
+
+  .mission-text {
+    margin-block: auto;
+    margin-left: auto;
+  }
+
+  .img2 {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 50%;
+    height: 80%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    background-size: contain;
+    background-position: center;
+  }
+
+  .team {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+  }
+  .team-text {
+    width: 45%;
+  }
+  .img4 {
+    margin: 0;
+    width: 20%;
+    height: 100%;
+    margin-right: 55px;
+  }
+}
