@@ -1,14 +1,7 @@
-const Form = document.getElementById("form");
 const Main = document.getElementById("main");
-// const message = document.getElementById("message");
-// const name = document.getElementById("name");
-// const email = document.getElementById("email");
-// const Subject = document.getElementById("subject");
 
 const userState = () => {
-  console.log(
-    createLink("Sign Up", "../Softstudy-sign-upSoftstudy-sign-up/sign-up.html")
-  );
+  console.log(createLink("Sign Up", "Softstudy-sign-up/sign-up.html"));
   console.log(createPTag("Sign Out", "sign-out"));
 
   if (loggedIn === null) {
@@ -37,7 +30,7 @@ const userState = () => {
             setTimeout(showMsg, 0);
             setTimeout(hideMsg, 3000);
             setTimeout(() => {
-              window.location.replace("../index.html");
+              window.location.replace("./index.html");
             }, 0);
           } else {
             authText.innerText = "Unable to log out";
@@ -57,7 +50,3 @@ const userState = () => {
 };
 
 Main.addEventListener("load", userState());
-
-Form.addEventListener("submit", (e) => {
-  e.preventDefault();
-});
