@@ -232,9 +232,11 @@ const hideMsg = () => {
 Main.addEventListener("change", nextSlide);
 next.addEventListener("click", () => {
   set1.style.display = "none";
+  window.location.assign("#set2");
 });
 previous.addEventListener("click", () => {
   set1.style.display = "block";
+  window.location.assign("set1");
 });
 Submit.addEventListener("click", () => {
   let obj = {};
